@@ -16,6 +16,11 @@ services:
     volumes:
       - ./next-app/src:/app/src
       - ./next-app/public:/app/public
+      - ./next-app/package.json:/app/package.json
+      - ./next-app/next.config.js:/app/next.config.js
+      - ./next-app/tsconfig.json:/app/tsconfig.json
+      - ./next-app/postcss.config.js:/app/postcss.config.js
+      - ./next-app/tailwind.config.js:/app/tailwind.config.js
     restart: always
     ports:
       - 3000:3000
