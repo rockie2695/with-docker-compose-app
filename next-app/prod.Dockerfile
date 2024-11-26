@@ -22,6 +22,8 @@ COPY src ./src
 COPY public ./public
 COPY next.config.js .
 COPY tsconfig.json .
+COPY postcss.config.js .
+COPY tailwind.config.js .
 
 # Environment variables must be present at build time
 # https://github.com/vercel/next.js/discussions/14030
@@ -29,6 +31,7 @@ ARG ENV_VARIABLE
 ENV ENV_VARIABLE=${ENV_VARIABLE}
 ARG NEXT_PUBLIC_ENV_VARIABLE
 ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
+ENV NEXT_PRIVATE_STANDALONE true
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry at build time
@@ -66,6 +69,7 @@ ARG ENV_VARIABLE
 ENV ENV_VARIABLE=${ENV_VARIABLE}
 ARG NEXT_PUBLIC_ENV_VARIABLE
 ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
+ENV NEXT_PRIVATE_STANDALONE true
 
 # Uncomment the following line to disable telemetry at run time
 # ENV NEXT_TELEMETRY_DISABLED 1
